@@ -30,5 +30,11 @@
     "LLMs/Qwen/input-corrected-text-report.pdf": "f1b4901456e8c666e705e69047b0fe32e914c522",
     "LLMs/You/corrected-text.md": "663ed9ef0b3d0f6c00e89e5ed7fab2783f41d5d7",
     "LLMs/You/input-corrected-text-report.pdf": "023af33c73e89aa4e6f15735af3c384ac5342608"
+  },
+  "historical_snapshot": {
+    "date": "2025-10-31",
+    "commit": "47c29f5ccb8231eb7232688d57b865dcf41a039f",
+    "archive_branch": "archive/baseline-2025-10-31",
+    "policy_document": "BASELINE.md"
   }
 }
