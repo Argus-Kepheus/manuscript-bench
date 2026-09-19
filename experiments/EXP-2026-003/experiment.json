@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "EXP-2026-003",
+  "title": "Controlled Source-Defect Challenge",
+  "status": "draft",
+  "family": "source_defect_challenge",
+  "primary_question": "Do LLM revision systems preserve and flag controlled source defects or silently normalize/invent information?",
+  "unit": "one model × one manuscript variant × one fixed prompt × one run",
+  "repeated_trials": "optional_after_pilot",
+  "conditions": [
+    "clean_control",
+    "seeded_defect"
+  ],
+  "primary_metrics": [
+    "preserve_and_flag_success_rate",
+    "silent_normalization_rate",
+    "fabrication_rate",
+    "defect_detection_rate",
+    "false_positive_intervention_rate"
+  ]
+}
