@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0",
+  "benchmark_date": "2025-10-31",
+  "scope": "single manuscript; single observed run per system",
+  "findings": [
+    {
+      "id": "SRC-001",
+      "origin": "source_inherited",
+      "category": "citation_integrity",
+      "severity": "major",
+      "systems": [
+        "all"
+      ],
+      "status": "documented",
+      "summary": "Azzopardi et al. 2014 author list is garbled in the source manuscript.",
+      "evidence": "HALLUCINATIONS.md §1 item 1"
+    },
+    {
+      "id": "SRC-002",
+      "origin": "source_inherited",
+      "category": "bibliography_quality",
+      "severity": "minor",
+      "systems": [
+        "all"
+      ],
+      "status": "documented",
+      "summary": "Thayyil et al. 2021 contains malformed author punctuation and missing page information in the source.",
+      "evidence": "HALLUCINATIONS.md §1 item 2"
+    },
+    {
+      "id": "SRC-003",
+      "origin": "source_inherited",
+      "category": "bibliography_quality",
+      "severity": "minor",
+      "systems": [
+        "all"
+      ],
+      "status": "documented",
+      "summary": "Abate et al. 2021 contains merged-word and journal-name typos in the source.",
+      "evidence": "HALLUCINATIONS.md §1 item 3"
+    },
+    {
+      "id": "SRC-004",
+      "origin": "source_inherited",
+      "category": "bibliography_quality",
+      "severity": "minor",
+      "systems": [
+        "all"
+      ],
+      "status": "documented",
+      "summary": "Machado & Lavor 2018 includes a Portuguese abbreviated month in the source.",
+      "evidence": "HALLUCINATIONS.md §1 item 4"
+    },
+    {
+      "id": "SRC-005",
+      "origin": "source_inherited",
+      "category": "content_consistency",
+      "severity": "major",
+      "systems": [
+        "all"
+      ],
+      "status": "documented",
+      "summary": "The source says two clinical cases but describes only one case.",
+      "evidence": "HALLUCINATIONS.md §1 item 5"
+    },
+    {
+      "id": "SRC-006",
+      "origin": "source_inherited",
+      "category": "data_quality",
+      "severity": "major",
+      "systems": [
+        "all"
+      ],
+      "status": "documented",
+      "summary": "The source gives a case-specific 32–35°C target distinct from the 33–34°C literature figure.",
+      "evidence": "HALLUCINATIONS.md §1 item 6"
+    },
+    {
+      "id": "MOD-001",
+      "origin": "model_introduced",
+      "category": "data_fidelity",
+      "severity": "major",
+      "systems": [
+        "Claude"
+      ],
+      "status": "confirmed",
+      "summary": "Case-specific temperature changed from 32–35°C to 33–34°C without a flag.",
+      "evidence": "HALLUCINATIONS.md §2 Case-specific temperature"
+    },
+    {
+      "id": "MOD-002",
+      "origin": "model_introduced",
+      "category": "data_fidelity",
+      "severity": "major",
+      "systems": [
+        "DeepSeek"
+      ],
+      "status": "confirmed",
+      "summary": "Case-specific temperature changed from 32–35°C to 33–34°C without a flag.",
+      "evidence": "HALLUCINATIONS.md §2 Case-specific temperature"
+    },
+    {
+      "id": "MOD-003",
+      "origin": "model_introduced",
+      "category": "data_fidelity",
+      "severity": "major",
+      "systems": [
+        "Grok"
+      ],
+      "status": "confirmed",
+      "summary": "Case-specific temperature changed from 32–35°C to 33–35°C without a flag.",
+      "evidence": "HALLUCINATIONS.md §2 Case-specific temperature"
+    },
+    {
+      "id": "MOD-004",
+      "origin": "model_introduced",
+      "category": "data_fidelity",
+      "severity": "major",
+      "systems": [
+        "Le-Chat"
+      ],
+      "status": "confirmed",
+      "summary": "Case-specific temperature changed from 32–35°C to 33–34°C without a flag.",
+      "evidence": "HALLUCINATIONS.md §2 Case-specific temperature"
+    },
+    {
+      "id": "MOD-005",
+      "origin": "model_introduced",
+      "category": "fabrication",
+      "severity": "major",
+      "systems": [
+        "Grok"
+      ],
+      "status": "confirmed",
+      "summary": "An unsupported subtitle was added to the manuscript title.",
+      "evidence": "HALLUCINATIONS.md §2 Invented title subtitles"
+    },
+    {
+      "id": "MOD-006",
+      "origin": "model_introduced",
+      "category": "fabrication",
+      "severity": "major",
+      "systems": [
+        "Le-Chat"
+      ],
+      "status": "confirmed",
+      "summary": "An unsupported subtitle was added to the manuscript title.",
+      "evidence": "HALLUCINATIONS.md §2 Invented title subtitles"
+    },
+    {
+      "id": "MOD-007",
+      "origin": "model_introduced",
+      "category": "fabrication",
+      "severity": "major",
+      "systems": [
+        "Maritaca"
+      ],
+      "status": "confirmed",
+      "summary": "An unsupported subtitle was added to the manuscript title.",
+      "evidence": "HALLUCINATIONS.md §2 Invented title subtitles"
+    },
+    {
+      "id": "MOD-008",
+      "origin": "model_introduced",
+      "category": "terminology",
+      "severity": "major",
+      "systems": [
+        "Gemini"
+      ],
+      "status": "confirmed",
+      "summary": "The title replaced Neonatal Anoxia with Hypoxic-Ischemic Encephalopathy without a flag.",
+      "evidence": "HALLUCINATIONS.md §2 Unflagged terminology change"
+    },
+    {
+      "id": "MOD-009",
+      "origin": "model_introduced",
+      "category": "fabrication",
+      "severity": "major",
+      "systems": [
+        "Le-Chat"
+      ],
+      "status": "confirmed",
+      "summary": "Four DOI fields absent from the source were added without verification flags.",
+      "evidence": "HALLUCINATIONS.md §2 Unflagged data additions"
+    },
+    {
+      "id": "MOD-010",
+      "origin": "model_introduced",
+      "category": "citation_integrity",
+      "severity": "major",
+      "systems": [
+        "Maritaca"
+      ],
+      "status": "confirmed",
+      "summary": "A bibliography entry merged authors from two different papers.",
+      "evidence": "HALLUCINATIONS.md §2 Citation fabrication via merging"
+    },
+    {
+      "id": "MOD-011",
+      "origin": "model_introduced",
+      "category": "internal_consistency",
+      "severity": "major",
+      "systems": [
+        "Maritaca"
+      ],
+      "status": "confirmed",
+      "summary": "A source detail missing from corrected-text.md reappeared in the model's normalized main.tex stage.",
+      "evidence": "HALLUCINATIONS.md §2 Internal inconsistency"
+    },
+    {
+      "id": "MOD-012",
+      "origin": "model_introduced",
+      "category": "internal_consistency",
+      "severity": "major",
+      "systems": [
+        "Meta"
+      ],
+      "status": "confirmed",
+      "summary": "The manuscript title changed between Meta's stored output stages.",
+      "evidence": "HALLUCINATIONS.md §2 Internal inconsistency"
+    },
+    {
+      "id": "MOD-013",
+      "origin": "model_introduced",
+      "category": "task_completion",
+      "severity": "major",
+      "systems": [
+        "Meta"
+      ],
+      "status": "confirmed",
+      "summary": "Citation conversion was not performed and the bibliography remained empty.",
+      "evidence": "HALLUCINATIONS.md §2 Citation conversion never performed"
+    },
+    {
+      "id": "CORR-001",
+      "origin": "evaluator_correction",
+      "category": "normalization_hygiene",
+      "severity": "minor",
+      "systems": [
+        "Copilot"
+      ],
+      "status": "fixed",
+      "summary": "A cosmetic double-slash URL was corrected in the normalized artifact.",
+      "evidence": "EVALUATION.md ranking row for Copilot"
+    },
+    {
+      "id": "CORR-002",
+      "origin": "evaluator_correction",
+      "category": "normalization_hygiene",
+      "severity": "minor",
+      "systems": [
+        "Qwen"
+      ],
+      "status": "fixed",
+      "summary": "A malformed reference.bib artifact was repaired in the normalized output.",
+      "evidence": "EVALUATION.md ranking row for Qwen"
+    },
+    {
+      "id": "CORR-003",
+      "origin": "evaluator_correction",
+      "category": "normalization_hygiene",
+      "severity": "minor",
+      "systems": [
+        "You"
+      ],
+      "status": "fixed",
+      "summary": "BibTeX truncation-marker syntax was corrected in the normalized artifact.",
+      "evidence": "EVALUATION.md ranking row for You"
+    },
+    {
+      "id": "CORR-004",
+      "origin": "evaluator_correction",
+      "category": "citation_integrity",
+      "severity": "major",
+      "systems": [
+        "Maritaca"
+      ],
+      "status": "fixed_in_normalized_artifact",
+      "summary": "The fabricated merged citation was corrected in the working normalized artifact while remaining documented as a model-output finding.",
+      "evidence": "HALLUCINATIONS.md §2 Citation fabrication via merging"
+    },
+    {
+      "id": "UNIV-001",
+      "origin": "experiment_wide",
+      "category": "instruction_adherence",
+      "severity": "major",
+      "systems": [
+        "ChatGPT",
+        "Claude",
+        "Copilot",
+        "DeepSeek",
+        "Gemini",
+        "Grok",
+        "Le-Chat",
+        "Maritaca",
+        "Meta",
+        "Perplexity",
+        "Qwen",
+        "You"
+      ],
+      "status": "confirmed",
+      "summary": "None of the 12 corrected-text outputs contains the mandated PROCESSING REPORT section.",
+      "evidence": "HALLUCINATIONS.md §3"
+    }
+  ]
+}
