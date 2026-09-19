@@ -1,0 +1,56 @@
+# Future Experiments
+
+This directory is reserved for new Manuscript Bench studies.
+
+The original 2025-10-31 experiment is **not** being moved here. It remains preserved in its historical layout and is additionally referenced by `BASELINE.md` and the archive branch `archive/baseline-2025-10-31`.
+
+## Rule
+
+A new experiment must never overwrite baseline evidence.
+
+Each future experiment should receive a stable identifier such as:
+
+```text
+EXP-2026-001
+```
+
+Recommended structure:
+
+```text
+experiments/
+└── EXP-YYYY-NNN/
+    ├── experiment.md
+    ├── experiment.json
+    ├── inputs/
+    ├── prompts/
+    ├── runs/
+    ├── normalized/
+    └── evaluation/
+```
+
+## Minimum experiment record
+
+Before data collection, document:
+
+- research question;
+- hypothesis or exploratory objective;
+- independent variables;
+- dependent variables/metrics;
+- control condition;
+- inclusion/exclusion rules;
+- target systems/models;
+- repetition strategy;
+- normalization procedure;
+- evaluation procedure;
+- planned analysis.
+
+After data collection, add:
+
+- exact run metadata;
+- raw evidence hashes;
+- deviations from protocol;
+- structured findings;
+- analysis outputs;
+- limitations.
+
+Use `experiment-template.md` when creating a new study.
