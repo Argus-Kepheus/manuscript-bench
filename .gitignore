@@ -7,5 +7,25 @@
 *.out
 *.run.xml
 *.synctex.gz
+*.synctex(busy)
 *.fdb_latexmk
 *.fls
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+_minted*/
+*.pyg
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
