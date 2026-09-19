@@ -32,20 +32,22 @@ matching Prompt.md's own stated priorities):
 
 ## Ranking
 
+<!-- BEGIN GENERATED RESULTS TABLE -->
 | Rank | Model | Data fidelity | Fabrication | Completeness | Citation integrity | Notable issue |
-|---|---|---|---|---|---|---|
-| 1 | **Copilot** | preserved | none found | complete | safe truncation | only a cosmetic double-slash URL (fixed) |
-| 2 | **ChatGPT** | preserved | none found | most complete bibliography of all 12 (fullest author lists) | kept source's garbled citation verbatim, unfixed | didn't clean up the inherited citation defect |
-| 3 | **You** | preserved | none found | complete | safe truncation | trivial BibTeX truncation-marker syntax (fixed) |
-| 4 | **Qwen** | preserved | none found | complete, cleanest typo cleanup | safe truncation | its own `reference.bib` file contained the entire markdown document instead of pure BibTeX (fixed) |
-| 5 | **Perplexity** | preserved | none found | lost most co-author names to aggressive "et al." truncation | truncated to first author only | meaningful bibliographic completeness loss |
-| 6 | **Claude** | **altered case temperature, unflagged** | none found | complete | safe truncation | one silent data alteration |
-| 7 | **DeepSeek** | **altered case temperature, unflagged** | none found | complete | confusing but harmless `[MISSING: first name]` flag on an already-present name | one silent data alteration + a backwards citation flag |
-| 8 | **Grok** | **altered case temperature, unflagged** | **invented a title subtitle** | complete | **only model to plausibly resolve the garbled citation to a real name** (unverified) | mixed record: worst data-fidelity tier, best citation research |
-| 9 | **Le-Chat** | **altered case temperature, unflagged** | **invented a title subtitle + 4 unflagged DOI additions** | complete | kept source citation defect verbatim | most individual fabrication events of any model |
-| 10 | **Gemini** | preserved | **unflagged title terminology change** | complete | partial cleanup, dangling fragment | only model that left every inherited reference-list typo completely uncleaned |
-| 11 | **Maritaca** | preserved | **invented subtitle + fabricated citation via author-list merging** | Methods section missing/duplicated; internal inconsistency between its own two output stages | merged two real papers' authors into one bogus entry | most structurally damaged output that still nominally compiles |
-| 12 | **Meta** | data mostly dropped, not altered | **title changed between its own two stages** | **least complete by far** — no citations converted, empty bibliography, ~half the clinical detail missing | none — never attempted | clear worst output: did the least, not necessarily invented the most |
+|---:|---|---|---|---|---|---|
+| 1 | Copilot | preserved | none found | complete | safe truncation | cosmetic double-slash URL fixed during normalization |
+| 2 | ChatGPT | preserved | none found | most complete bibliography of all 12 | kept source garbled citation verbatim | inherited citation defect was not cleaned |
+| 3 | You | preserved | none found | complete | safe truncation | BibTeX truncation-marker syntax fixed during normalization |
+| 4 | Qwen | preserved | none found | complete; clean typo cleanup | safe truncation | reference.bib artifact was repaired during normalization |
+| 5 | Perplexity | preserved | none found | co-author names aggressively truncated | truncated to first author only | meaningful bibliographic completeness loss |
+| 6 | Claude | altered case temperature; unflagged | none found | complete | safe truncation | silent data alteration |
+| 7 | DeepSeek | altered case temperature; unflagged | none found | complete | confusing missing-name flag | silent data alteration plus citation-flag issue |
+| 8 | Grok | altered case temperature; unflagged | invented title subtitle | complete | plausible but unverified citation resolution | data-fidelity failure plus invented title content |
+| 9 | Le-Chat | altered case temperature; unflagged | invented title subtitle plus unflagged DOI additions | complete | kept source citation defect verbatim | multiple unsupported additions |
+| 10 | Gemini | preserved | unflagged title terminology change | complete | partial cleanup with dangling fragment | inherited reference defects remained and title terminology changed |
+| 11 | Maritaca | preserved | invented subtitle plus fabricated merged citation | Methods missing/duplicated; internal output inconsistency | merged author lists | structural and citation-integrity problems |
+| 12 | Meta | data mostly dropped; not altered | title changed between output stages | least complete; citations not converted; bibliography empty | not attempted | large task-completion gap |
+<!-- END GENERATED RESULTS TABLE -->
 
 ## Reading the ranking
 
