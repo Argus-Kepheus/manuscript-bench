@@ -1,58 +1,77 @@
 # Improvement Opportunities
 
-This document collects practical improvements that could increase clarity, maintainability, and research value without requiring a major redesign.
+This document tracks practical improvements that increase clarity, maintainability, and research value without redesigning the preserved benchmark.
+
+Status legend:
+
+- **Implemented** — present in the repository.
+- **Partial** — useful infrastructure exists, but the full opportunity remains open.
+- **Future** — intentionally deferred until the project grows or a new experiment is created.
 
 ## Documentation
 
-- Keep the root `README.md` focused on the benchmark's scope, methodology, limitations, and navigation.
-- Record future experiment-specific details close to the corresponding experiment instead of continuously expanding the root README.
-- Add a short changelog if the repository begins receiving regular methodological updates.
-- Document naming conventions for model directories, experiment identifiers, and prompt versions.
+- **Implemented** — Keep the root `README.md` focused on benchmark scope, methodology, limitations, and navigation.
+- **Implemented** — Maintain a repository-level `CHANGELOG.md`.
+- **Implemented** — Document naming conventions for experiments, runs, prompts, findings, artifacts, and commit messages in `CONVENTIONS.md`.
+- **Future** — Put future experiment-specific documentation close to each experiment rather than expanding the root README indefinitely.
 
 ## Repository hygiene
 
-- Keep generated LaTeX intermediate files excluded through `.gitignore`.
-- Retain PDFs when they represent experimental evidence or intentionally published compiled outputs.
-- If binary artifacts become numerous, consider Git LFS, GitHub Releases, or external archival storage rather than allowing repository history to grow indefinitely.
-- Avoid duplicating identical templates across experiments when a shared template plus version identifier is sufficient.
+- **Implemented** — Ignore common LaTeX, editor, operating-system, and Python temporary files.
+- **Implemented** — Retain PDFs that function as experimental evidence or intentional compiled outputs rather than ignoring all PDFs globally.
+- **Future** — Move high-volume binary evidence to Git LFS, Releases, or archival storage if the benchmark becomes materially larger.
+- **Future** — Avoid template duplication across multiple future experiments by using explicit template versions or shared template references.
 
 ## Evaluation quality
 
-- Convert the main evaluation dimensions into structured data so that Markdown tables can be generated instead of maintained manually.
-- Store each finding with a stable identifier, affected model/run, category, evidence location, and severity.
-- Distinguish clearly between:
-  - source-inherited defects;
-  - model-introduced changes;
-  - normalization-stage changes;
-  - evaluator corrections;
-  - unresolved findings.
-- Separate descriptive measurements from subjective or heuristic judgments.
+- **Implemented** — Store the comparative results in `evaluation/results.csv`.
+- **Implemented** — Generate/check the ranking table in `EVALUATION.md` from structured results.
+- **Implemented** — Store stable findings with IDs, origin, affected systems, category, severity, status, summary, and evidence reference in `evaluation/findings.json`.
+- **Implemented** — Distinguish source-inherited, model-introduced, normalization-stage, evaluator-correction, and experiment-wide findings.
+- **Partial** — Separate descriptive measurements from heuristic judgments. Current structured files improve the distinction, but the historical ranking still reflects a retrospective weighting scheme.
 
 ## Prompt engineering
 
-- Preserve the original `Prompt.md` as an immutable experiment artifact.
-- Introduce future prompt variants under explicit version names rather than editing the original in place.
-- Track which instruction classes are followed or ignored, such as:
-  - factual preservation;
-  - anti-hallucination constraints;
-  - bibliography transformations;
-  - reporting requirements;
-  - output-format compliance.
-- Consider decomposing future prompts into reusable modules so individual instruction families can be ablated or tested independently.
+- **Implemented** — Protect `Prompt.md`, the shared input, stored model text, and captured reports through `evaluation/baseline-manifest.json`.
+- **Implemented** — Define explicit conventions for future prompt versions instead of replacing the baseline prompt.
+- **Implemented** — Track factual preservation, anti-hallucination behavior, bibliography transformation, reporting requirements, and output-format compliance in `evaluation/instruction-adherence.csv`.
+- **Future** — Decompose a future prompt generation into reusable modules for controlled ablation studies. This should be introduced with a new experiment rather than retrofitted into the historical prompt.
 
 ## Validation
 
-Potential automated checks include:
+### Implemented automated checks
 
-- missing required sections;
-- unexpected numerical changes;
+The lightweight validator and CI currently check:
+
+- required repository structure;
+- immutability of baseline evidence through content hashes;
+- structured evaluation file consistency;
+- unique and valid finding identifiers;
+- instruction-adherence values;
+- expected system coverage;
+- basic BibTeX brace consistency;
+- undefined LaTeX citation keys;
+- accidental tracked LaTeX intermediate files;
+- synchronization between `evaluation/results.csv` and the generated table in `EVALUATION.md`.
+
+Known experimental failures, such as the missing `PROCESSING REPORT`, are surfaced as warnings rather than rewritten.
+
+### Future automated checks
+
+These remain useful candidates for a future research iteration:
+
+- semantic detection of unexpected numerical changes;
 - altered units;
-- dropped paragraphs;
+- dropped paragraphs or propositions;
 - newly introduced named entities;
-- bibliography entries absent from the source;
-- malformed BibTeX;
-- unresolved citations;
-- LaTeX compilation failures;
-- inconsistent model metadata.
+- bibliography entries unsupported by the source;
+- deeper BibTeX semantic validation;
+- full LaTeX compilation in CI;
+- schema validation for future run metadata;
+- automated comparison across repeated trials.
 
 Automation should assist evaluation, not silently replace human review.
+
+## Current implementation boundary
+
+The changes implemented in 2026-09-19 deliberately improve infrastructure around the baseline while leaving the original experiment evidence unchanged. More invasive modularization belongs to a future experiment and is tracked separately in `roadmap/modularity.md`.
