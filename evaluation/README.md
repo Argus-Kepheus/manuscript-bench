@@ -6,7 +6,8 @@ The Markdown documents remain the narrative source for interpretation. The struc
 
 ## Files
 
-- `results.csv` — one row per tested system, mirroring the current comparative table.
+- `results.csv` — one row per tested system; this is the source for the generated ranking table in `EVALUATION.md`.
+- `instruction-adherence.csv` — retrospective classification of adherence to key instruction classes in the original prompt.
 - `findings.json` — stable, categorized audit findings with identifiers and provenance.
 - `baseline-manifest.json` — content-addressed manifest protecting baseline prompt/input/raw-output evidence.
 
@@ -31,3 +32,13 @@ Severity is descriptive within this experiment:
 - `major` — substantive task-compliance, factual-fidelity, completeness, or citation-integrity issue.
 
 Severity does not represent medical or real-world risk.
+
+## Generated documentation
+
+The comparison table in `EVALUATION.md` is delimited by generated-table markers and can be reproduced from `results.csv` with:
+
+```text
+python scripts/generate_evaluation_table.py --write
+```
+
+Continuous integration uses `--check` to detect divergence between the structured data and the Markdown table.
