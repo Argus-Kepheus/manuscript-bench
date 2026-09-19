@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "EXP-2026-002",
+  "title": "Run-to-Run Reliability",
+  "status": "draft",
+  "family": "repeated_trials",
+  "primary_question": "How stable is each LLM-based assistant under repeated nominally identical academic-revision runs?",
+  "unit": "one product/model × one fixed prompt × one fixed manuscript × one independent run",
+  "repeated_trials": true,
+  "stages": [
+    "pilot",
+    "confirmatory"
+  ],
+  "primary_metrics": [
+    "factual_alteration_frequency",
+    "unsupported_addition_frequency",
+    "citation_integrity_failure_frequency",
+    "required_section_completion_frequency",
+    "instruction_adherence_stability"
+  ]
+}
