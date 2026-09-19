@@ -40,6 +40,7 @@ REQUIRED_ROOT = [
     "CHANGELOG.md",
     "CONVENTIONS.md",
     "evaluation/results.csv",
+    "evaluation/instruction-adherence.csv",
     "evaluation/findings.json",
     "evaluation/baseline-manifest.json",
     "roadmap/README.md",
@@ -172,6 +173,47 @@ def check_results_csv() -> None:
         fail("evaluation/results.csv ranks are not a complete 1..12 sequence")
 
 
+
+def check_instruction_adherence_csv() -> None:
+    path = ROOT / "evaluation" / "instruction-adherence.csv"
+    if not path.exists():
+        return
+    try:
+        with path.open(newline="", encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+    except Exception as exc:
+        fail(f"Cannot parse evaluation/instruction-adherence.csv: {exc}")
+        return
+
+    systems = [row.get("system", "") for row in rows]
+    if len(rows) != len(SYSTEMS):
+        fail(
+            f"evaluation/instruction-adherence.csv should contain {len(SYSTEMS)} rows; "
+            f"found {len(rows)}"
+        )
+    if set(systems) != set(SYSTEMS):
+        fail(
+            "instruction-adherence system set differs from baseline directories: "
+            f"{sorted(set(systems) ^ set(SYSTEMS))}"
+        )
+
+    allowed = {"pass", "partial", "fail", "unknown"}
+    fields = [
+        "factual_preservation",
+        "anti_hallucination",
+        "bibliography_transformations",
+        "reporting_requirements",
+        "output_format_compliance",
+    ]
+    for row in rows:
+        for field in fields:
+            if row.get(field) not in allowed:
+                fail(
+                    f"Invalid adherence value for {row.get('system')} / {field}: "
+                    f"{row.get(field)!r}"
+                )
+
+
 def check_findings_json() -> None:
     path = ROOT / "evaluation" / "findings.json"
     if not path.exists():
@@ -282,6 +324,7 @@ def main() -> int:
     check_required_structure()
     check_baseline_manifest()
     check_results_csv()
+    check_instruction_adherence_csv()
     check_findings_json()
     check_latex_and_bibtex()
     check_transient_files()
