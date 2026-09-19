@@ -144,6 +144,17 @@ The current repository is best treated as:
 
 It is **not** intended to establish general performance claims about any provider or model.
 
+## Maintenance
+
+Additional project-maintenance material:
+
+- [`CONVENTIONS.md`](CONVENTIONS.md) — naming and versioning conventions.
+- [`CHANGELOG.md`](CHANGELOG.md) — repository and methodology changes.
+- [`evaluation/`](evaluation/) — machine-readable evaluation data and the baseline manifest.
+- [`roadmap/`](roadmap/) — planned improvements, scalability, modularity, and reproducibility work.
+
+A lightweight repository validator is available at `scripts/validate_repository.py`.
+
 ## Repository status
 
 The benchmark is currently a completed snapshot rather than an actively expanding dataset. Future work, if added, should preserve the existing 2025-10-31 study as a versioned baseline and introduce new experiments in a way that keeps prompts, inputs, model identifiers, run settings, and evaluation criteria traceable.
