@@ -19,6 +19,7 @@ The current repository should be treated as a preserved experimental baseline. R
 - [`scalability.md`](scalability.md) — how the repository could evolve from a single-study snapshot into a larger benchmark.
 - [`modularity.md`](modularity.md) — proposed separation of prompts, raw outputs, normalized artifacts, metadata, evaluation, and tooling.
 - [`reproducibility.md`](reproducibility.md) — metadata, versioning, provenance, validation, and automation recommendations.
+- [`experiments.md`](experiments.md) — concrete experiment families for temporal replication, reliability, source-defect challenges, citation stress tests, prompt ablations, cross-domain and multilingual replication, and reporting compliance.
 
 ## Suggested priority
 
