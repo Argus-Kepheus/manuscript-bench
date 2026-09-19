@@ -1,0 +1,13 @@
+rank,system,data_fidelity,fabrication,completeness,citation_integrity,notable_issue,observed_date,scope
+1,Copilot,preserved,none found,complete,safe truncation,"cosmetic double-slash URL fixed during normalization",2025-10-31,"single manuscript; single observed run"
+2,ChatGPT,preserved,none found,"most complete bibliography of all 12","kept source garbled citation verbatim","inherited citation defect was not cleaned",2025-10-31,"single manuscript; single observed run"
+3,You,preserved,none found,complete,safe truncation,"BibTeX truncation-marker syntax fixed during normalization",2025-10-31,"single manuscript; single observed run"
+4,Qwen,preserved,none found,"complete; clean typo cleanup",safe truncation,"reference.bib artifact was repaired during normalization",2025-10-31,"single manuscript; single observed run"
+5,Perplexity,preserved,none found,"co-author names aggressively truncated","truncated to first author only","meaningful bibliographic completeness loss",2025-10-31,"single manuscript; single observed run"
+6,Claude,"altered case temperature; unflagged",none found,complete,safe truncation,"silent data alteration",2025-10-31,"single manuscript; single observed run"
+7,DeepSeek,"altered case temperature; unflagged",none found,complete,"confusing missing-name flag","silent data alteration plus citation-flag issue",2025-10-31,"single manuscript; single observed run"
+8,Grok,"altered case temperature; unflagged","invented title subtitle",complete,"plausible but unverified citation resolution","data-fidelity failure plus invented title content",2025-10-31,"single manuscript; single observed run"
+9,Le-Chat,"altered case temperature; unflagged","invented title subtitle plus unflagged DOI additions",complete,"kept source citation defect verbatim","multiple unsupported additions",2025-10-31,"single manuscript; single observed run"
+10,Gemini,preserved,"unflagged title terminology change",complete,"partial cleanup with dangling fragment","inherited reference defects remained and title terminology changed",2025-10-31,"single manuscript; single observed run"
+11,Maritaca,preserved,"invented subtitle plus fabricated merged citation","Methods missing/duplicated; internal output inconsistency","merged author lists","structural and citation-integrity problems",2025-10-31,"single manuscript; single observed run"
+12,Meta,"data mostly dropped; not altered","title changed between output stages","least complete; citations not converted; bibliography empty","not attempted","large task-completion gap",2025-10-31,"single manuscript; single observed run"
