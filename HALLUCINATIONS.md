@@ -1,6 +1,6 @@
-# Hallucination & Data-Fidelity Audit
+# Manuscript Bench — Hallucination & Data-Fidelity Audit
 
-This document flags every place where a model's output in `LLMs/` diverges from the
+This document records the data-fidelity audit for the current Manuscript Bench snapshot and flags every place where a stored model output in `LLMs/` diverges from the
 original source text in `LLMs/Prompt-input.md`, in violation of `Prompt.md`'s own
 anti-hallucination rule:
 
