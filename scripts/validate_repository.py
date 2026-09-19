@@ -34,6 +34,7 @@ SYSTEMS = [
 
 REQUIRED_ROOT = [
     "README.md",
+    "BASELINE.md",
     "Prompt.md",
     "EVALUATION.md",
     "HALLUCINATIONS.md",
@@ -44,6 +45,9 @@ REQUIRED_ROOT = [
     "evaluation/findings.json",
     "evaluation/baseline-manifest.json",
     "roadmap/README.md",
+    "roadmap/experiments.md",
+    "experiments/README.md",
+    "experiments/experiment-template.md",
 ]
 
 TRANSIENT_SUFFIXES = {
@@ -309,6 +313,71 @@ def check_latex_and_bibtex() -> None:
                 )
 
 
+
+def check_experiment_drafts() -> None:
+    experiments_root = ROOT / "experiments"
+    if not experiments_root.exists():
+        return
+
+    seen_ids: set[str] = set()
+    allowed_status = {
+        "draft",
+        "pilot",
+        "frozen-protocol",
+        "running",
+        "complete",
+        "archived",
+    }
+
+    for directory in sorted(experiments_root.glob("EXP-*")):
+        if not directory.is_dir():
+            continue
+
+        md_path = directory / "experiment.md"
+        json_path = directory / "experiment.json"
+
+        if not md_path.exists():
+            fail(f"Experiment is missing experiment.md: {directory.name}")
+        if not json_path.exists():
+            fail(f"Experiment is missing experiment.json: {directory.name}")
+            continue
+
+        try:
+            data = json.loads(json_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            fail(f"Cannot parse {json_path.relative_to(ROOT)}: {exc}")
+            continue
+
+        experiment_id = data.get("experiment_id")
+        if experiment_id != directory.name:
+            fail(
+                f"Experiment id/path mismatch: {directory.name} vs "
+                f"{experiment_id!r}"
+            )
+        if experiment_id in seen_ids:
+            fail(f"Duplicate experiment id: {experiment_id}")
+        seen_ids.add(experiment_id)
+
+        status = data.get("status")
+        if status not in allowed_status:
+            fail(f"Invalid status for {directory.name}: {status!r}")
+
+        for required in [
+            "schema_version",
+            "title",
+            "family",
+            "primary_question",
+            "unit",
+            "primary_metrics",
+        ]:
+            if required not in data:
+                fail(f"{directory.name} is missing metadata field: {required}")
+
+        metrics = data.get("primary_metrics")
+        if not isinstance(metrics, list) or not metrics:
+            fail(f"{directory.name} must define at least one primary metric")
+
+
 def check_transient_files() -> None:
     for path in ROOT.rglob("*"):
         if not path.is_file() or ".git" in path.parts:
@@ -327,6 +396,7 @@ def main() -> int:
     check_instruction_adherence_csv()
     check_findings_json()
     check_latex_and_bibtex()
+    check_experiment_drafts()
     check_transient_files()
 
     print("Manuscript Bench repository validation")
