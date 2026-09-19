@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "EXP-2026-001",
+  "title": "Temporal Replication of the 2025 Benchmark",
+  "status": "draft",
+  "family": "temporal_replication",
+  "baseline": {
+    "date": "2025-10-31",
+    "commit": "47c29f5ccb8231eb7232688d57b865dcf41a039f",
+    "archive_branch": "archive/baseline-2025-10-31"
+  },
+  "primary_question": "How do currently available LLM-based assistants behave on the exact frozen 2025 academic-revision task?",
+  "unit": "one product/model × original prompt × original manuscript × one fresh run",
+  "repeated_trials": false,
+  "primary_metrics": [
+    "factual_fidelity",
+    "unsupported_generation",
+    "completeness",
+    "citation_reference_integrity",
+    "instruction_adherence",
+    "processing_report_compliance"
+  ]
+}
