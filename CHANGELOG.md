@@ -16,6 +16,13 @@ This file records methodological and repository-level changes. It does not reint
 - Added `roadmap/` documentation covering improvements, scalability, modularity, and reproducibility.
 - Added repository naming and versioning conventions.
 
+### Frozen baseline and experiment planning
+
+- Declared the 2025-10-31 experiment a frozen historical evidence set in `BASELINE.md`.
+- Created `archive/baseline-2025-10-31` pointing to canonical historical commit `47c29f5ccb8231eb7232688d57b865dcf41a039f`.
+- Added an experiment-driven scalability roadmap and a reusable experiment template.
+- Formulated draft protocols for temporal replication, run-to-run reliability, and controlled source-defect testing.
+
 ### Evaluation infrastructure
 
 - Added machine-readable evaluation summaries and stable finding identifiers.
