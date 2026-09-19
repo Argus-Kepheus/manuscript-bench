@@ -148,10 +148,12 @@ It is **not** intended to establish general performance claims about any provide
 
 Additional project-maintenance material:
 
+- [`BASELINE.md`](BASELINE.md) — frozen 2025-10-31 evidence policy and canonical historical snapshot.
 - [`CONVENTIONS.md`](CONVENTIONS.md) — naming and versioning conventions.
 - [`CHANGELOG.md`](CHANGELOG.md) — repository and methodology changes.
 - [`evaluation/`](evaluation/) — machine-readable evaluation data and the baseline manifest.
-- [`roadmap/`](roadmap/) — planned improvements, scalability, modularity, and reproducibility work.
+- [`roadmap/`](roadmap/) — planned improvements, scalability, modularity, reproducibility, and candidate experiment designs.
+- [`experiments/`](experiments/) — workspace and template for future experiments.
 
 A lightweight repository validator is available at `scripts/validate_repository.py`.
 
