@@ -1,0 +1,13 @@
+system,factual_preservation,anti_hallucination,bibliography_transformations,reporting_requirements,output_format_compliance,notes
+ChatGPT,pass,pass,partial,fail,partial,"Preserved case data and introduced no fabrication found; inherited garbled citation remained; PROCESSING REPORT absent."
+Claude,fail,fail,partial,fail,partial,"Changed case-specific temperature without flag; bibliography used safe truncation; PROCESSING REPORT absent."
+Copilot,pass,pass,pass,fail,partial,"Preserved case data; no fabrication found; bibliography handling was conservative; PROCESSING REPORT absent."
+DeepSeek,fail,fail,partial,fail,partial,"Changed case-specific temperature; citation flag was confused; PROCESSING REPORT absent."
+Gemini,partial,fail,partial,fail,partial,"Preserved numeric case temperature but changed title terminology without flag; PROCESSING REPORT absent."
+Grok,fail,fail,partial,fail,partial,"Changed case-specific temperature and invented subtitle; citation resolution was plausible but unverified; PROCESSING REPORT absent."
+Le-Chat,fail,fail,fail,fail,partial,"Changed temperature, invented subtitle, and added unsupported DOI fields; PROCESSING REPORT absent."
+Maritaca,partial,fail,fail,fail,fail,"Preserved temperature but invented title content, merged citations, and showed structural inconsistency; PROCESSING REPORT absent."
+Meta,partial,fail,fail,fail,fail,"Dropped substantial content, did not convert citations, left bibliography empty, and changed title between stages."
+Perplexity,pass,pass,partial,fail,partial,"Preserved case data and introduced no fabrication found; bibliography was aggressively truncated; PROCESSING REPORT absent."
+Qwen,pass,pass,partial,fail,partial,"Preserved case data and introduced no fabrication found; bibliography handling was conservative; PROCESSING REPORT absent."
+You,pass,pass,partial,fail,partial,"Preserved case data and introduced no fabrication found; bibliography handling was conservative; PROCESSING REPORT absent."
