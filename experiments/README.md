@@ -54,3 +54,13 @@ After data collection, add:
 - limitations.
 
 Use `experiment-template.md` when creating a new study.
+
+## Draft studies
+
+The following protocols are formulated but not yet executed:
+
+- [`EXP-2026-001`](EXP-2026-001/experiment.md) — temporal replication of the frozen 2025 task on later product/model generations.
+- [`EXP-2026-002`](EXP-2026-002/experiment.md) — repeated identical runs to measure run-to-run reliability.
+- [`EXP-2026-003`](EXP-2026-003/experiment.md) — controlled source defects to measure preserve-and-flag behavior versus silent normalization.
+
+Additional experiment families are described in [`roadmap/experiments.md`](../roadmap/experiments.md).
