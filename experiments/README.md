@@ -2,7 +2,7 @@
 
 This directory is reserved for new Manuscript Bench studies.
 
-The original 2025-10-31 experiment is **not** being moved here. It remains preserved in its historical layout and is additionally referenced by `BASELINE.md` and the archive branch `archive/baseline-2025-10-31`.
+The original 2025-10-31 experiment is **not** being moved here. It remains preserved in its historical layout and is additionally referenced by `BASELINE.md` and canonical commit `47c29f5ccb8231eb7232688d57b865dcf41a039f`.
 
 ## Rule
 

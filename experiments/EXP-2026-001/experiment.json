@@ -6,8 +6,7 @@
   "family": "temporal_replication",
   "baseline": {
     "date": "2025-10-31",
-    "commit": "47c29f5ccb8231eb7232688d57b865dcf41a039f",
-    "archive_branch": "archive/baseline-2025-10-31"
+    "commit": "47c29f5ccb8231eb7232688d57b865dcf41a039f"
   },
   "primary_question": "How do currently available LLM-based assistants behave on the exact frozen 2025 academic-revision task?",
   "unit": "one product/model × original prompt × original manuscript × one fresh run",

@@ -6,9 +6,8 @@ The original Manuscript Bench experiment is preserved as historical evidence of 
 
 - **Date:** 2025-10-31
 - **Canonical commit:** `47c29f5ccb8231eb7232688d57b865dcf41a039f`
-- **Archive branch:** `archive/baseline-2025-10-31`
 
-The archive branch points directly to the last repository state committed on 2025-10-31. It is intended as a human-readable reference to the original experiment before later audit, normalization, documentation, and infrastructure work.
+The canonical commit is the last repository state committed on 2025-10-31. It is part of the `main` history and serves as the reference to the original experiment before later audit, normalization, documentation, and infrastructure work.
 
 ## Evidence policy
 
@@ -35,7 +34,7 @@ Manuscript Bench now uses two complementary preservation mechanisms.
 
 ### 1. Historical repository snapshot
 
-`archive/baseline-2025-10-31` preserves the complete repository state as it existed at the end of the original experiment date.
+Commit `47c29f5ccb8231eb7232688d57b865dcf41a039f` preserves the complete repository state as it existed at the end of the original experiment date. It can be inspected with `git checkout 47c29f5` or browsed on GitHub at `/tree/47c29f5ccb8231eb7232688d57b865dcf41a039f`.
 
 ### 2. Evidence manifest on the current branch
 

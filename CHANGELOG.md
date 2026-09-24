@@ -2,6 +2,13 @@
 
 This file records methodological and repository-level changes. It does not reinterpret historical model outputs.
 
+## 2026-09-24
+
+### Repository maintenance
+
+- Removed the `archive/baseline-2025-10-31` branch, whose history was already fully contained in `main`.
+- Updated baseline references to point to canonical commit `47c29f5ccb8231eb7232688d57b865dcf41a039f` directly instead of the archive branch.
+
 ## 2026-09-19
 
 ### Repository identity

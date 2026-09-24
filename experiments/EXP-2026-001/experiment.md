@@ -16,7 +16,6 @@ This is the closest possible replication of the original Manuscript Bench experi
 
 - Historical date: 2025-10-31
 - Historical commit: `47c29f5ccb8231eb7232688d57b865dcf41a039f`
-- Archive branch: `archive/baseline-2025-10-31`
 - Protected prompt hash: see `evaluation/baseline-manifest.json`
 - Protected input hash: see `evaluation/baseline-manifest.json`
 

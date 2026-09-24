@@ -2,7 +2,7 @@
 
 Manuscript Bench should scale by **adding new experiments**, not by rewriting the original one.
 
-The 2025-10-31 benchmark is a frozen historical evidence set. Its canonical historical state is documented in [`BASELINE.md`](../BASELINE.md) and preserved at commit `47c29f5ccb8231eb7232688d57b865dcf41a039f` through the archive branch `archive/baseline-2025-10-31`.
+The 2025-10-31 benchmark is a frozen historical evidence set. Its canonical historical state is documented in [`BASELINE.md`](../BASELINE.md) and preserved at commit `47c29f5ccb8231eb7232688d57b865dcf41a039f`.
 
 Concrete candidate experiments are specified in [`experiments.md`](experiments.md).
 

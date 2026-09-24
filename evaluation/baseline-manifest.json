@@ -34,7 +34,6 @@
   "historical_snapshot": {
     "date": "2025-10-31",
     "commit": "47c29f5ccb8231eb7232688d57b865dcf41a039f",
-    "archive_branch": "archive/baseline-2025-10-31",
     "policy_document": "BASELINE.md"
   }
 }
